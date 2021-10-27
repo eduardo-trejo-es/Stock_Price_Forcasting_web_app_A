@@ -1,9 +1,20 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} 
 {% block content %}
   <h1 align="center">Home page</h1>
+  <h3> Getting Fortasting {{ value }}</h3>
   <form method="POST">
-    <div align="center">
-      <button type="submit" class="btn btn-primary">Get Chart</button>
+    <div   >
+      <button type="submit" class="btn btn-primary pull-left">Get Chart</button>
     </div>
   </form>
+  
+  <div class="dropdown pull-right"   >
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Select company
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">TWTR</a>
+      <a class="dropdown-item" href="#">AAPL</a>
+    </div>
+  </div>
 {% endblock %}
