@@ -8,13 +8,15 @@
     </div>
   </form>
   
-  <div class="dropdown pull-right"   >
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Select company
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">TWTR</a>
-      <a class="dropdown-item" href="#">AAPL</a>
+  <form method="POST">
+    <div class="dropdown pull-right"   >
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="dropdown_MenuButton">
+        Select company
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <button class="dropdown-item btn btn-primary" type="submit" value="TWTR" name="TWTR_Val">TWTR</a>
+        <button class="dropdown-item btn btn-primary" type="sibmit" value="AAPL" name="AAPL_Val">AAPL</a>
+      </div>
     </div>
-  </div>
+  </form>
 {% endblock %}

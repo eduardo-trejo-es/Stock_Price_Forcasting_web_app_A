@@ -4,9 +4,27 @@ from StockPricePredictionFIles.ForcastingGeneScript import PriceForcaster
 views = Blueprint('views', __name__)
 ForcastingObject = PriceForcaster()
 
-@views.route('/')
+Company_Selected="null"
+@views.route('/', methods=['POST', 'GET'])
 def home():
-    return render_template("home.html", value=ForcastingObject.Gettingforcasting())
+    Company_Selected = "null"
+    if request.method =='POST':
+        try:
+            Company_Selected = request.form["TWTR_Val"]
+        except:
+            pass
+        try:
+            Company_Selected = request.form["AAPL_Val"]
+        except:
+            pass
+                
+
+
+        #Company_Selected = request.form.get("dropdown_MenuButton")
+        #Company_Selected = request.form["dropdown_MenuButton"]
+    else:
+        Company_Selected = "null"
+    return render_template("home.html", value=ForcastingObject.Gettingforcasting(Company_Selected))
 
 
 @views.route('/about')
